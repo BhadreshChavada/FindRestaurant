@@ -27,21 +27,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    flavorDimensions 'JTS'
-    productFlavors {
-        dev {
-            dimension = 'JTS'
-        }
-        qa {
-            dimension = 'JTS'
-        }
-        stg {
-            dimension = 'JTS'
-        }
-        prod {
-            dimension = 'JTS'
-        }
-    }
+
 
 }
 dependencies {
