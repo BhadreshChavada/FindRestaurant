@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "572205611417",
+    "firebase_url": "https://FindResturant-1586769185677.firebaseio.com",
+    "project_id": "FindResturant-1586769185677",
+    "storage_bucket": "FindResturant-1586769185677.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572205611417:android:df7443052c095e76b9bb08",
+        "android_client_info": {
+          "package_name": "com.FindResturant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "572205611417-i4gqt8nko4jubrmcek89kufh6digl0rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0tl5NklHvnJwUCchXk8JaN0oEn4_V0LM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "572205611417-i4gqt8nko4jubrmcek89kufh6digl0rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

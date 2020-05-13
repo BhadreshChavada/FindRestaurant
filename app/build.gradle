@@ -1,0 +1,119 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    dataBinding{
+        enabled = true
+    }
+    defaultConfig {
+        applicationId "com.FindResturant"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions 'JTS'
+    productFlavors {
+        dev {
+            dimension = 'JTS'
+        }
+        qa {
+            dimension = 'JTS'
+        }
+        stg {
+            dimension = 'JTS'
+        }
+        prod {
+            dimension = 'JTS'
+        }
+    }
+
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.design
+    implementation deps.support.recyclerview
+    implementation deps.constraint_layout
+
+
+    // Architecture components
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+    implementation deps.paging_ktx
+    implementation 'com.tuyenmonkey:mkloader:1.4.0'
+
+
+    kapt deps.lifecycle.compiler
+    kapt deps.room.compiler
+
+    // RxJava
+    implementation deps.rx_android
+    implementation deps.rxjava2
+
+    // Kotlin
+    implementation deps.kotlin.stdlib
+
+    // Koin
+    implementation deps.koin.core
+    implementation deps.koin.android
+    implementation deps.koin.architecture
+
+    // Retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.rx_adapter
+    implementation deps.retrofit.gson
+
+    // OkHttp
+    implementation deps.okhttp_logging_interceptor
+//    implementation deps.play_service.auth
+    implementation deps.glideloader
+    implementation deps.sdp
+    implementation deps.ssp
+    implementation deps.dexter
+    testImplementation deps.junit
+    testImplementation deps.kotlin.stdlib
+    testImplementation deps.kotlin.test
+    testImplementation deps.koin.test, { exclude group: 'org.mockito' }
+
+
+    // Espresso UI Testing
+    androidTestImplementation deps.espresso.core
+    androidTestImplementation deps.espresso.contrib
+    androidTestImplementation deps.espresso.intents
+
+    // Resolve conflicts between main and test APK:
+    androidTestImplementation deps.support.annotations
+    androidTestImplementation deps.support.v4
+    androidTestImplementation deps.support.app_compat
+    androidTestImplementation deps.support.design
+    implementation deps.play_service.maps
+
+    testImplementation 'junit:junit:4.12'
+    implementation deps.rxBinding
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}
+repositories {
+    mavenCentral()
+}
