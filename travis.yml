@@ -1,2 +1,7 @@
-language: android
-dist: trusty
+{
+  "language": "android",
+  "os": [
+    "linux"
+  ],
+  "dist": "trusty"
+}
